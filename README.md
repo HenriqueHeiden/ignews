@@ -88,7 +88,8 @@ O app estará disponível no seu browser pelo endereço http://localhost:3000 as
 
 ## 🌐 Live preview
 
-Sem Live Preview
+
+https://user-images.githubusercontent.com/5850776/208478279-e59f10f6-d3ea-4d24-be0c-d5d163814686.mp4
 
 ---
 # ignews
