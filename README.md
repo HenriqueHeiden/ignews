@@ -3,11 +3,11 @@
 Ignews é um portal de notícias pago, em que você precisa se autenticar com o GitHub e se inscrever caso queira ler as postagens completas. Usando as APIs de processamento de pagamentos do Stripe, o CMS Prismic para escrever seus posts e o FaunaDB como banco de dados.
 
 <h1 align="center">
-    <img width="900px" alt="Imagem da aplicação" src=".github/ignews-home.PNG" />
+    <img width="900px" alt="Imagem da aplicação" src="https://user-images.githubusercontent.com/5850776/208479902-8c59db17-49f5-4aa5-8e90-78e88886cc5c.png" />
 </h1>
 
 <h1 align="center">
-    <img width="900px" alt="Imagem da tela de Posts" src=".github/ignews-posts.PNG" />
+    <img width="900px" alt="Imagem da tela de Posts" src="https://user-images.githubusercontent.com/5850776/208479933-dfafc5c4-e8b4-418b-868c-22b11d88326a.png" />
 </h1>
 
 <br>
@@ -58,7 +58,7 @@ $ ./stripe listen --forward-to localhost:3000/api/webhooks
 ```
 
 <h1 align="center">
-    <img width="900px" alt="Página com preview do post para pessoas não assinantes" src=".github/ignews-preview.PNG" />
+    <img width="900px" alt="Página com preview do post para pessoas não assinantes" src="https://user-images.githubusercontent.com/5850776/208479956-9ef17f18-0ecd-4877-8cfb-32fcf25891ac.png" />
 </h1>
 
 ---
@@ -81,7 +81,7 @@ Precisa de autenticação
 ---
 
 <h1 align="center">
-    <img width="900px" alt="Tela de checkout para pagamento do stripe" src=".github/stripe-checkout.PNG" />
+    <img width="900px" alt="Tela de checkout para pagamento do stripe" src="https://user-images.githubusercontent.com/5850776/208479981-939643f3-2089-45ac-ba67-2118eed06c3d.png" />
 </h1>
 
 O app estará disponível no seu browser pelo endereço http://localhost:3000 assim que iniciado.
