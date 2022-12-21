@@ -1,6 +1,7 @@
 .signInButton {
-  height: 3rem;
   border: 0;
+
+  height: 3rem;
   padding: 0 1.5rem;
 
   border-radius: 3rem;
@@ -12,8 +13,6 @@
 
   color: var(--white);
   font-weight: bold;
-
-  transition: filter 0.2s;
 
   svg {
     width: 20px;
@@ -27,6 +26,8 @@
   svg.closeIcon {
     margin-left: 1rem;
   }
+
+  transition: filter 0.2s;
 
   &:hover {
     filter: brightness(0.8);

@@ -1,11 +1,21 @@
 module.exports = {
-  testPathIgnorePatterns: ["/node_modules/", "/.next/"], // quais pastas ignorar nos teste
-  setupFilesAfterEnv: ["<rootDir>/src/tests/setupTests.ts"],
+  // Ignored files during testing
+  testPathIgnorePatterns: ['/node_modules/', '/.next/'],
+
+  setupFilesAfterEnv: ['<rootDir>/src/tests/setupTests.ts'],
+
+  // Transform all files before running tests
   transform: {
-    "^.+\\.(js|jsx|ts|tsx)$": "<rootDir>/node_modules/babel-jest",
+    '^.+\\.(js|jsx|ts|tsx)$': '<rootDir>/node_modules/babel-jest',
   },
-  moduleNameMapper: {
-    "\\.(scss|css|sass)$": "identity-obj-proxy",
-  },
-  testEnvironment: "jsdom", // quando renderiza o html ele vai criar uma representação da dom em js
+  moduleNameMapper: { '\\.(css|less|scss|sass)$': 'identity-obj-proxy' },
+  // indicates which environment the tests are running
+  testEnvironment: 'jsdom',
+  collectCoverage: true,
+  collectCoverageFrom: [
+    'src/**/*.{ts,tsx}',
+    '!src/**/*.spec.tsx',
+    '!**/node_modules/**',
+  ],
+  coverageReporters: ['text', 'lcov', 'json', 'clover'],
 };

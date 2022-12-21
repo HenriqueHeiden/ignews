@@ -1,34 +1,32 @@
-import { render, screen } from "@testing-library/react";
-import Home, { getStaticProps } from "../../pages";
-import { stripe } from "../../services/stripe";
+import { render, screen } from '@testing-library/react';
 
-jest.mock("next/router");
-jest.mock("next-auth/react", () => {
-  return {
-    useSession: () => [null, false],
-  };
-});
-jest.mock("../../services/stripe");
+import { mocked } from 'jest-mock';
 
-describe("Home page", () => {
-  it("renders correctly", () => {
-    render(
-      <Home
-        product={{
-          priceId: "fake-priceId",
-          amount: "$10.00",
-        }}
-      />
-    );
+import { stripe } from '../../services/stripe';
 
-    expect(screen.getByText("for $10.00 month")).toBeInTheDocument();
+import Home, { getStaticProps } from '../../pages';
+
+jest.mock('next/router');
+
+jest.mock('next-auth/client', () => ({
+  useSession: () => [null, false],
+}));
+
+jest.mock('../../services/stripe');
+
+describe('Home page', () => {
+  it('should render the home page', () => {
+    render(<Home product={{ priceId: 'fake-price-id', amount: 'R$10,00' }} />);
+
+    expect(screen.getByText('for R$10,00 month')).toBeInTheDocument();
   });
 
-  it("loads initial data", async () => {
-    const retriveStripePricesMocked = jest.mocked(stripe.prices.retrieve);
+  it('loads initial data', async () => {
+    const retrieveStripePricesMocked = mocked(stripe.prices.retrieve);
 
-    retriveStripePricesMocked.mockResolvedValueOnce({
-      id: "fake-price-id",
+    // quando a função for uma promise user mockResolvedValue
+    retrieveStripePricesMocked.mockResolvedValue({
+      id: 'fake-price-id',
       unit_amount: 1000,
     } as any);
 
@@ -38,11 +36,11 @@ describe("Home page", () => {
       expect.objectContaining({
         props: {
           product: {
-            priceId: "fake-price-id",
-            amount: "$10.00",
+            priceId: 'fake-price-id',
+            amount: '$10.00',
           },
         },
-      })
+      }),
     );
   });
 });

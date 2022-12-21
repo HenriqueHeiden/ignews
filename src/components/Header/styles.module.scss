@@ -11,7 +11,6 @@
 
   display: flex;
   align-items: center;
-  justify-content: center;
 
   nav {
     margin-left: 5rem;
@@ -41,7 +40,7 @@
       }
 
       &.active::after {
-        content: "";
+        content: '';
         height: 3px;
         border-radius: 3px 3px 0 0;
         width: 100%;
